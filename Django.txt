@@ -1,0 +1,6 @@
+Django is based on an MVT pattern that
+
+model, View, templates
+ where by models are bsed on the database.
+ views are for business logic.
+ templates are for front-end
