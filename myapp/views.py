@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 # Create your views here.
@@ -30,7 +31,17 @@ def mysecondpage(request):
 
 def mythirdpage(request):
     var = 'hello world'
+    greeting = 'how are you'
+    fruits = ["Apple", "Mango", "Pear"]
+    num1 , num2 = 7 , 5
+    ans = num1 > num2
+    # print(ans)
     mydictionary = {
-        'var' : var
+        'var' : var,
+        'msg' : greeting,
+        'myfruits' : fruits,
+        'num1': num1,
+        'num2':num2,
+        'ans':ans
     }
-    return render(request, 'thirdpage.htm')
+    return render(request, 'thirdpage.htm',context=mydictionary)
